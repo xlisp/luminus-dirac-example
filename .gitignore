@@ -12,3 +12,8 @@ profiles.clj
 /.env
 .nrepl-port
 /log
+figwheel_server.log
+.test-dirac-chrome-profile/
+lein
+out/
+

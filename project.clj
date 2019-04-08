@@ -1,3 +1,6 @@
+(def devtools-version "0.9.10")
+(def dirac-version "1.3.5")
+
 (defproject jimw-clj-binding-games "0.1.0-SNAPSHOT"
 
   :description "FIXME: write description"
@@ -35,6 +38,8 @@
                  [ring-webjars "0.2.0"]
                  [ring/ring-core "1.7.1"]
                  [ring/ring-defaults "0.3.2"]
+                 [binaryage/devtools ~devtools-version]
+                 [binaryage/dirac ~dirac-version]
                  [selmer "1.12.12"]]
 
   :min-lein-version "2.0.0"
@@ -51,9 +56,7 @@
   :figwheel
   {:http-server-root "public"
    :server-logfile "log/figwheel-logfile.log"
-   :nrepl-port 7002
-   :css-dirs ["resources/public/css"]
-   :nrepl-middleware [cider.piggieback/wrap-cljs-repl]}
+   :css-dirs ["resources/public/css"]}
   
 
   :profiles
@@ -85,7 +88,6 @@
 
    :project/dev  {:jvm-opts ["-Dconf=dev-config.edn"]
                   :dependencies [[binaryage/devtools "0.9.10"]
-                                 [cider/piggieback "0.4.0"]
                                  [doo "0.1.11"]
                                  [expound "0.7.2"]
                                  [figwheel-sidecar "0.5.18"]
@@ -107,7 +109,7 @@
                      {:output-dir "target/cljsbuild/public/js/out"
                       :closure-defines {"re_frame.trace.trace_enabled_QMARK_" true}
                       :optimizations :none
-                      :preloads [re-frisk.preload]
+                      :preloads [re-frisk.preload devtools.preload]
                       :output-to "target/cljsbuild/public/js/app.js"
                       :asset-path "/js/out"
                       :source-map true
@@ -119,7 +121,11 @@
                   :doo {:build "test"}
                   :source-paths ["env/dev/clj"]
                   :resource-paths ["env/dev/resources"]
-                  :repl-options {:init-ns user}
+                  :repl-options {:port             8230
+                                  :nrepl-middleware [dirac.nrepl/middleware]
+                                  :init             (do
+                                                      (require 'dirac.agent)
+                                                      (dirac.agent/boot!))}
                   :injections [(require 'pjstadig.humane-test-output)
                                (pjstadig.humane-test-output/activate!)]}
    :project/test {:jvm-opts ["-Dconf=test-config.edn"]

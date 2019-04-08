@@ -9,8 +9,11 @@
     [jimw-clj-binding-games.ajax :as ajax]
     [jimw-clj-binding-games.events]
     [reitit.core :as reitit]
-    [clojure.string :as string])
+    [clojure.string :as string]
+    [dirac.runtime])
   (:import goog.History))
+
+(dirac.runtime/install!)
 
 (defn nav-link [uri title page]
   [:a.navbar-item
