@@ -16,4 +16,6 @@ figwheel_server.log
 .test-dirac-chrome-profile/
 lein
 out/
+.idea/
+jimw-clj-binding-games.iml
 

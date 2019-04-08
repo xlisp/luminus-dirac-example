@@ -15,6 +15,10 @@
 
 (dirac.runtime/install!)
 
+
+(def abc 111)
+(def defg (r/atom {:aaa 2222}))
+
 (defn nav-link [uri title page]
   [:a.navbar-item
    {:href   uri
