@@ -6,7 +6,7 @@
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
 
-  :dependencies [[ch.qos.logback/logback-classic "1.2.3"]
+  :dependencies [;;[ch.qos.logback/logback-classic "1.2.3"]
                  [cheshire "5.8.1"]
                  [cljs-ajax "0.8.0"]
                  [clojure.java-time "0.3.2"]
@@ -28,7 +28,7 @@
                  [org.clojure/clojure "1.10.0"]
                  [org.clojure/clojurescript "1.10.520" :scope "provided"]
                  [org.clojure/tools.cli "0.4.2"]
-                 [org.clojure/tools.logging "0.4.1"]
+                 ;;[org.clojure/tools.logging "0.4.1"]
                  [org.postgresql/postgresql "42.2.5"]
                  [org.webjars.npm/bulma "0.7.4"]
                  [org.webjars.npm/material-icons "0.3.0"]

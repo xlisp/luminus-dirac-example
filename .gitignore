@@ -18,4 +18,4 @@ lein
 out/
 .idea/
 jimw-clj-binding-games.iml
-
+.rebel_readline_history
