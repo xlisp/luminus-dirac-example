@@ -9,12 +9,8 @@
     [jimw-clj-binding-games.ajax :as ajax]
     [jimw-clj-binding-games.events]
     [reitit.core :as reitit]
-    [clojure.string :as string]
-    [dirac.runtime])
+    [clojure.string :as string])
   (:import goog.History))
-
-(dirac.runtime/install!)
-
 
 (def abc 111)
 (def defg (r/atom {:aaa 2222}))

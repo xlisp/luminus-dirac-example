@@ -106,7 +106,8 @@
                      :figwheel
                      {:on-jsload "jimw-clj-binding-games.core/mount-components"}
                      :compiler
-                     {:output-dir "target/cljsbuild/public/js/out"
+                     {:preloads  [devtools.preload dirac.runtime.preload]
+                      :output-dir "target/cljsbuild/public/js/out"
                       :closure-defines {"re_frame.trace.trace_enabled_QMARK_" true}
                       :optimizations :none
                       :preloads [re-frisk.preload devtools.preload]
