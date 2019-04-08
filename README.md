@@ -1,5 +1,7 @@
 # jimw-clj-binding-games
 
+![](./clojure互操作chrome-devtools时代.png)
+
 generated using Luminus version "3.25"
 
 FIXME
