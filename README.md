@@ -2,22 +2,24 @@
 
 ![](./clojure互操作chrome-devtools时代.png)
 
-generated using Luminus version "3.25"
+## Develop
 
-FIXME
+```bash
+./lein figwheel
 
-## Prerequisites
+./lein run
 
-You will need [Leiningen][1] 2.0 or above installed.
+./lein repl
 
-[1]: https://github.com/technomancy/leiningen
+/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary \
+  --remote-debugging-port=9222 \
+  --no-first-run \
+  --user-data-dir=.test-dirac-chrome-profile
 
-## Running
+`open 127.0.0.1:3000 & open dirac devtools `
 
-To start a web server for the application, run:
-
-    lein run 
+```
 
 ## License
 
-Copyright © 2019 FIXME
+Copyright © 2019 SteveChan
