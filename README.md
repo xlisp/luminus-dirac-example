@@ -1,4 +1,4 @@
-# jimw-clj-binding-games
+# luminus dirac devtools example
 
 ![](./clojure互操作chrome-devtools时代.png)
 
